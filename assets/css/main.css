@@ -10,11 +10,11 @@
 
 @layer components {
   .button {
-    @apply bg-cello-500 hover:bg-cello-600 rounded p-3 text-white;
+    @apply bg-slate-500 hover:bg-slate-600 rounded p-3 text-white;
   }
 
   .button.player-1 {
-    @apply bg-cello-500;
+    @apply bg-cello-500 hover:bg-cello-600;
   }
 
   .button.player-2 {
