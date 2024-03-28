@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-vulcan-100;
+  }
+}
+
+@layer components {
+  .button {
+    @apply bg-cello-500 hover:bg-cello-600 rounded p-3 text-white;
+  }
+
+  .button.player-1 {
+    @apply bg-cello-500;
+  }
+
+  .button.player-2 {
+    @apply bg-torch-red-500 hover:bg-torch-red-600;
+  }
+}
