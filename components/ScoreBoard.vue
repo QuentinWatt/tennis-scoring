@@ -12,6 +12,10 @@ const addPlayer1Point = () => {
 const addPlayer2Point = () => {
   data.game.player2Point()
 }
+
+const restartGame = () => {
+  data.game = new Game()
+}
 </script>
 
 <template>
@@ -23,12 +27,14 @@ const addPlayer2Point = () => {
       </h2>
     </div>
     <div v-if="!data.game.isComplete()" class="grid grid-cols-2 gap-2 max-w-md mx-auto">
-      <button class="button" @click="addPlayer1Point">Blue Score</button>
-
+      <button class="button player-1" @click="addPlayer1Point">Blue Score</button>
       <button class="button player-2" @click="addPlayer2Point">Red Score</button>
     </div>
     <div v-else>
-      <div class="font-bold text-center text-4xl">Game Complete!</div>
+      <div class="flex flex-col items-center">
+        <span class="font-bold text-center text-4xl mb-3">Game Complete!</span>
+        <button class="button" @click="restartGame">Restart</button>
+      </div>
     </div>
   </main>
 </template>
