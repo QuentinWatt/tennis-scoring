@@ -48,4 +48,24 @@ describe("It passes the Game Class test", () => {
     game.player2Point();
     expect(game.scoreboard()).toEqual("Deuce");
   });
+
+  it("Completes the game when player 1 has scored 4 points", () => {
+    expect(game.scoreboard()).toEqual("Love all");
+    game.player1Point();
+    game.player1Point();
+    game.player1Point();
+    game.player1Point();
+    expect(game.scoreboard()).toEqual("Game - Love");
+    expect(game.isComplete()).toBe(true);
+  });
+
+  it("Completes the game when player 2 has scored 4 points", () => {
+    expect(game.scoreboard()).toEqual("Love all");
+    game.player2Point();
+    game.player2Point();
+    game.player2Point();
+    game.player2Point();
+    expect(game.scoreboard()).toEqual("Love - Game");
+    expect(game.isComplete()).toBe(true);
+  });
 });
