@@ -1,75 +1,31 @@
-# Nuxt 3 Minimal Starter
+# Tennis Scoring App
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project is written with [Nuxt 3](https://nuxt.com/). An SSR framework for Vue 3.
 
-## Setup
+## Installation
 
-Make sure to install the dependencies:
+### With Node
+
+1. Clone the project
 
 ```bash
-# npm
-npm install
+git clone git@github.com:QuentinWatt/tennis-scoring.git tennis-app
+```
 
-# pnpm
+2. Move into the directory
+
+```bash
+cd tennis-app
+```
+
+3. Install dependencies
+
+```bash
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+4. Run in development mode
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+pnpm dev
 ```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
