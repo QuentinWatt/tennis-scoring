@@ -12,27 +12,36 @@ export class Game implements IGame {
   score1: number = 0;
   score2: number = 0;
 
-  constructor() {
-    //
-  }
-
   scoreboard(): string {
-    let scores = ["Love", "15", "30", "40", "Game"];
+    let scores: string[] = ["Love", "15", "30", "40"];
 
-    if (this.score1 == this.score2) {
-      scores = ["Love all", "15 all", "30 all", "Deuce", "Advantage", "Game"];
+    if (this.score1 == this.score2 && this.score1 <= 3) {
+      scores = ["Love all", "15 all", "30 all", "Deuce"];
       return `${scores[this.score1]}`;
     }
 
+    if (this.score1 >= 3 && this.score2 >= 3) {
+      const prefix =
+        Math.abs(this.score1 - this.score2) >= 2 ? "Game" : "Advantage";
+
+      if (this.score1 > this.score2) {
+        return `${prefix} - ${scores[this.score2] ?? this.score2}`;
+      } else if (this.score1 < this.score2) {
+        return `${scores[this.score1] ?? this.score1} - ${prefix}`;
+      }
+
+      return "Deuce";
+    }
+
+    scores = ["Love", "15", "30", "40", "Game"];
     return `${scores[this.score1]} - ${scores[this.score2]}`;
   }
 
   isComplete(): boolean {
-    if ((this.score1 !== this.score2 && this.score1 == 4) || this.score2 == 4) {
-      return true;
-    }
-
-    return false;
+    return (
+      (this.score1 >= 4 || this.score2 >= 4) &&
+      Math.abs(this.score1 - this.score2) >= 2
+    );
   }
 
   player1Point(): void {
